@@ -1,23 +1,27 @@
-// Array containing the button colours used in the game
+// Array to store the different colours of buttons used in the game
 var buttonColours = ["red", "blue", "green", "yellow"];
 
-// Arrays to store the generated game pattern and the user's clicked pattern
+// Array to hold the randomly generated pattern of colours in the game
 var gamePattern = [];
+
+// Array to store the user's clicked pattern of colours
 var userClickedPattern = [];
 
-// Variables to keep track of the game's status
-var started = false; // Flag to check if the game has started
-var level = 0; // Current level of the game
+// Variable to keep track of whether the game has started or not
+var started = false;
+
+// Variable to keep track of the current level of the game
+var level = 0;
 
 // Event listener for the keypress event on the document
 $(document).keypress(function() {
-  // If the game has not started yet (started = false)
+  // Check if the game has not started yet
   if (!started) {
     // Update the heading to display the current level
     $("#level-title").text("Level " + level);
     // Generate the next sequence in the game
     nextSequence();
-    // Set started to true, so this block doesn't run again until the game restarts
+    // Set the 'started' flag to true, so this block doesn't run again until the game restarts
     started = true;
   }
 });
@@ -106,8 +110,5 @@ function playSound(name) {
 function startOver() {
   level = 0;
   gamePattern = [];
-  started = false;
-}
-Pattern = [];
   started = false;
 }
